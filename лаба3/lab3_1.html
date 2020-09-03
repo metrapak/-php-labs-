@@ -1,0 +1,84 @@
+<html>
+<head>
+ <script>
+
+     // функция проверки строки на пустоту
+    function validate(str) 
+    {
+        if (str.trim() && str.length != 0)
+        return true;
+        return false;
+    }
+
+    // функция вычисления
+    function calc() 
+    {
+        var number1 = document.getElementById("number1").value;
+        var number2 = document.getElementById("number2").value;
+ 
+    // проверяем числа ли ввели и на непустые строки
+        if (validate(number1) && validate(number2)) {
+      
+        var sign = document.getElementById("sign").value;
+        if (sign == "+") 
+        {
+            alert(number1 + number2);
+            document.getElementById('number3').value = (number1 + number2);
+        }
+        else if (sign == "-") 
+        {
+            alert(number1 - number2);
+            document.getElementById('number3').value = (number1 - number2);
+        }
+        else if (sign == "*") 
+        {
+            alert(number1 * number2);
+            document.getElementById('number3').value = (number1 * number2);
+        }
+        else if (number2 != 0) 
+        {
+            alert(number1 / number2);
+            document.getElementById('number3').value = (number1 / number2);
+        }
+        else 
+        {
+            alert("Division on 0!");
+        }
+    }
+    else 
+    {
+        alert("Wrong input!");
+    }
+ }
+
+     
+ </script>
+</head>
+<body>
+<h1>Калькулятор</h1>
+<form>
+ <label>Введите первое число</label>
+ <input type="number" id="number1" autofocus> 
+
+ <br>
+ <label>Введите второе число</label>
+ <input type="number" id="number2">
+
+ <br>
+ <label>Выберите операцию</label>
+ <select id="sign">
+ <option name="sum">+</option>
+ <option name="raz">-</option>
+ <option name="mul">*</option>
+ <option name="div">/</option>
+ </select>
+ <br>
+ <label>Результат</label>
+ <input type="number" id="number3">
+ <br>
+ <input type="button" value="Результат" onclick="calc();">
+ <br>
+ <input type="reset" value="Очистить">
+</form>
+</body>
+</html>

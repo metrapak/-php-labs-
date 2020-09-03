@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script type = "text/javascript">
+        function checkCorrect(){
+            
+			let answer = 0;
+
+			
+            for(let i=0;i<form1.language[].length;i++){
+				if(form1.product[i].checked)answer++;
+			}
+			f
+            
+			if(answer<1){
+				return false;
+			}
+            
+        
+        </script>
+    </head>
+    <body>
+        <h2>Форма для регистрации участников </h2>
+        <form  name = "form1" action="test2.php" autocomplete="on" method=POST onsubmit ="return checkCorrect()">     
+             Имя: <br><input type="text" name="first_name" autofocus required><br>    
+             Фамилия: <br><input type="text" name="last_name"  required><br>     
+             E-mail: <br><input type="email" name="email"  required><br> 
+             Возраст: <br><input type="number" name="age" min="15"  required><br>
+             <p>Выберите ваш пол:</p>
+                 <input type="radio" name="gender" value="Female" checked required>Female<br>
+                 <input type="radio" name="gender" value="Male" required>Male<br>
+             <p> Выберите язык, который вы бы хотели изучать:</p>        
+                  <input type="checkbox" name="language[]" value="English">English<br>        
+                  <input type="checkbox" name="language[]" value="French"  >French<br>         
+                  <input type="checkbox" name="language[]" value="German" >German<br>         
+                  <input type="checkbox" name="language[]" value="Italian" >Italian<br> 
+                  <input type="checkbox" name="language[]" value="Portuguese" >Portuguese<br>   
+                  <input type="checkbox" name="language[]" value="Spanish" >Spanish<br>   
+                  <input type="checkbox" name="language[]" value="Russian" >Russian<br>   
+                  <input type="checkbox" name="language[]" value="Chinese" >Chinese<br>       
+                  <p>Укажите дополнительную информацию</p>         
+                  <textarea name="comment" cols=3 rows=3 ></textarea>
+                  <br>       
+                  <input type=submit value="Отправить">         
+                  <input type=reset value="Отменить"> 
+        </form> 
+    </body>
+</html>

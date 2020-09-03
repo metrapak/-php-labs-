@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript">
+function getData() {
+ let str = document.form1.textField.value;
+ let a = str.split(/[\s,!.;?:]+/);
+ localStorage.setItem("array",a);
+}
+</script>
+</head>
+<body>
+
+<form name="form1" action ="output.html" onsubmit = "getData()">
+<p> Введите ваш текст:</p>
+<textarea name="textField" cols="35" rows="7"></textarea>
+<p><input type= "submit" value="Submit" ></p>
+</form>
+
+</body>
+</html>
+    
