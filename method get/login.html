@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>method get</title>
+</head>
+<body>
+<form id="form" method="GET" action="2.1.html" onsubmit="load">
+Login: <input type="text" name="login" id="login"><br>
+Password<input type="text" name="password" id="password"><br>
+<input type="button" value="Submit">
+</form>
+<script>
+function load(){
+    localStorage.login = document.getElementById("login").value;
+    document.getElementById("form").submit();
+}
+</script>
+</body>
+</html>

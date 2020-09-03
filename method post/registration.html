@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <form name="form1" action = "confirm.html" autocomplete="on"  method ="post" onsubmit= "return checkCorrect()"> 
+             <h1> Registration</h1>  
+                     Name: <br><input type="text" name="name" id="name" autofocus required><br>    
+                     Email: <br><input type="email" name="email" id="email"  required><br> 
+                     Password: <br><input type="password" id="password" name="password"  required><br> 
+                     Repeat password: <br><input type="password" id="passwordRepeat" name="password2"  required><br> 
+                     Date birthday:<br><input type="date"  id="date_birthday" name="date-birthday" required><br>
+                     Gender:<br><input type="radio"  value="male" id="gender_man" name="gender" required> Male<br>
+                             <input type="radio"  value="female" id="gender_woman"  name="gender"required> Female <br>
+                     Country:<br>
+                            <select name="country" id="select_country" required>
+                                <option value="Belarus">Belarus</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Ukraine">Ukraine</option>
+                            </select><br>
+                     Тechnologies:<br>
+                            <select multiple name="technology" id="select_technology" required>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="C#">C#</option>
+                                <option value="Java">Java</option>
+                                <option value="PHP">PHP</option>
+                                <option value="Python">Python</option>
+                                <option value="Android (Kotlin)">Android (Kotlin)</option>
+                            </select><br>
+                    <input type="submit" value="Отправить" >         
+                    <input type="reset" value="Отменить" id="reset"> 
+                </form> 
+            </body>
+    <script type="text/javascript">
+        let formRegistration = document.forms.form1;
+            function checkCorrect()
+            {   
+                var name = formRegistration.name.value;
+                var email = formRegistration.email.value;
+                var password = formRegistration.password.value;
+                var passwordRepeat = formRegistration.password2.value;
+                var dateBirthday = formRegistration.elements["date-birthday"].value;
+                var gender = formRegistration.gender.value;
+                var country = formRegistration.country.value;
+                var technologyOptions = formRegistration.technology.options;
+                var selectedTech = [];
+                for (const tech of technologyOptions) {
+                    if (tech.selected) {
+                        selectedTech.push(tech.value);
+                    }
+                }
+                 localStorage.setItem("name",name);
+                 localStorage.setItem("email", email);
+                 localStorage.setItem("password", password);
+                 localStorage.setItem("dateBirthday", dateBirthday);
+                 localStorage.setItem("gender", gender);
+                 localStorage.setItem("country", country);
+                 localStorage.setItem("selectedTech", selectedTech.join("|"));
+                
+               
+                if(password != passwordRepeat )
+                {
+                     alert("Вы ввели некорректные данные");
+                    
+                }
+                
+                
+            }
+            
+        </script>
+    
+</html>

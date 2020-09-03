@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST-Confirm</title>
+    <script type="text/javascript">
+       
+    window.addEventListener("load", load);
+
+function load() {
+    let login = localStorage.getItem("login");
+    let dateBirthday = localStorage.getItem("dateBirthday");
+    let country = localStorage.getItem("country");
+    let technologyOptions = localStorage.getItem("selectedTech");
+
+    let paragraph = document.getElementsByTagName("p")[0];
+    let date = dateBirthday.split("-");
+    paragraph.innerHTML = "Ваш логин: " + login + "<br>" + "Дата рождения: " + date[2] + "-" + date[1] + "-" +
+        date[0] + "<br>" + "Место рождения: " + country;
+    setListTechnology(technologyOptions);
+}
+
+function setListTechnology(technologyOptions) {
+    let ul = document.getElementsByTagName("ul")[0];
+    let list = technologyOptions.split("|");
+    for (const elem of list) {
+        let li = document.createElement("li");
+        li.textContent = elem;
+        ul.append(li);
+    }
+            
+        
+//    var name = localStorage.getItem("name");
+//    var email = localStorage.getItem("email");
+//    var dateBirthday = localStorage.getItem("date-birthday");
+//    var gender = localStorage.getItem("gender");
+//    var country = localStorage.getItem("country");
+//    var paragraph = document.getElementsByTagName("p")[0];
+//    var date = dateBirthday.split("-");
+//     paragraph.innerHTML = "Ваш логин: " + login + "<br>" + "Дата рождения: " + date[2] + "-" + date[1] + "-" +
+//        date[0] + "<br>" + "Место рождения: " + country;
+//    document.write("User name = " + name);
+//	document.write("Email = " + email);
+//    document.write("datebirthday" + dateBirthday);
+//    document.write("gender"+ gender);
+//    document.write("country"+ country);
+//        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Registration</h1>
+    </header>
+    
+        <section class="short-information">
+            <p></p>
+            <p>Тechnologies:</p>
+            <ul></ul>
+        </section> 
+</body>
+
+</html>

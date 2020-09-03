@@ -1,0 +1,17 @@
+
+form
+{
+    text-align: center;
+    position: fixed; top: 10%; left: 40%;
+}
+
+body
+{
+    background: white;
+}
+
+#reset
+{
+    color: white;
+    background: red;
+}
